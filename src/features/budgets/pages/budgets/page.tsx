@@ -11,7 +11,6 @@ import { useAppDispatch, useAppSelector } from "@/hooks/store";
 import { useFilterSearchParams, getFilterItemsFromFields } from "@/features/filter";
 import { HeaderAside, PageContent } from "../../components";
 
-// todo check default import everywhere
 export default function Page() {
   const dispatch = useAppDispatch();
 
