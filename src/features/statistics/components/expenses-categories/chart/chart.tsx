@@ -16,7 +16,7 @@ export const Chart = ({ items }: { items: CostsCategoriesStatisticsItem[] }) => 
           <YAxis dataKey="name" type="category" width={isMobile ? 156 : 206} tick={{ width: isMobile ? 150 : 200 }} />
           <Tooltip coordinate={coords} position={coords} content={<ChartTooltip />} />
           <Legend />
-          <Bar dataKey="value" legendType="none" fill="#8884d8" />
+          <Bar dataKey="value" legendType="none" fill="#82ca9d" />
         </BarChart>
       </ResponsiveContainer>
     </div>
