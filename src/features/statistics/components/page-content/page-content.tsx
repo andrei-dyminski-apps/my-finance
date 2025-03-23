@@ -3,7 +3,7 @@ import { Filter } from "../filter";
 import { ActiveFilters } from "../active-filters";
 import { FoundNothing } from "@/components/list/found-nothing";
 import { selectCostCategories, selectIncomeCategories } from "@/store/selectors/references";
-import { selectBudgetsListForChartsByFilter, selectCostsListForChartsByFilter, selectIncomesListForChartsByFilter, selectIsStatisticsFilterValuesChanged } from "../../selectors";
+import { selectBudgetsListForChartsByFilter, selectCostsListForChartsByFilter, selectIncomesListForChartsByFilter } from "../../selectors";
 import { useAppSelector } from "@/hooks/store";
 import { Empty } from "../empty";
 import { Tabs } from "../tabs";
@@ -15,7 +15,6 @@ export const PageContent = ({ isFilterValuesFilled, onGetData }: PageContentProp
   const costsListForCharts = useAppSelector(selectCostsListForChartsByFilter);
   const budgetsListForCharts = useAppSelector(selectBudgetsListForChartsByFilter);
   const incomesListForCharts = useAppSelector(selectIncomesListForChartsByFilter);
-  const isFilterValuesChanged = useAppSelector(selectIsStatisticsFilterValuesChanged);
 
   const charts = (
     <>
@@ -36,7 +35,7 @@ export const PageContent = ({ isFilterValuesFilled, onGetData }: PageContentProp
             <ActiveFilters />
           </div>
         )}
-        {costsListForCharts?.length || incomesListForCharts?.length || budgetsListForCharts?.length ? charts : isFilterValuesChanged && <FoundNothing />}
+        {costsListForCharts?.length || incomesListForCharts?.length || budgetsListForCharts?.length ? charts : <FoundNothing />}
       </section>
     );
   }
